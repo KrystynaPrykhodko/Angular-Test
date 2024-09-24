@@ -1,0 +1,27 @@
+<div>
+    <h2>{{nachricht}}</h2>
+    <p>Dies ist ein einfacher Text, der in der Komponente angezeigt wird !</p>
+</div>
+
+
+<div>
+    <form (ngSubmit)="onSubmit(formRef)" #formRef="ngForm">
+        <!-- Name Eingabefeld-->
+         <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" ngModel required>
+         </div>
+
+         <!-- Email Eingabefeld-->
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ngModel required>
+          </div>
+
+          <!-- Buttons -->
+           <div>
+            <button type="submit" [disabled]="!formRef.form.valid">Submit</button>
+            <button type="reset" (click)="formRef.resetForm()">Reset</button>
+           </div>
+    </form>
+</div>
